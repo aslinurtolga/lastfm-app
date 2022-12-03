@@ -1,9 +1,9 @@
 import React from "react";
 
-const TopCards = () => {
+const TopCards = ({item, name}) => {
   return (
     <div>
-      <a href="">
+      <a href={item?.url}>
         <img src="" alt="" />
         <div>
           <h5></h5>
