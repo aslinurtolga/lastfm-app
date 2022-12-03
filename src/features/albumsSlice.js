@@ -7,12 +7,15 @@ const initialState = {
   error: "",
 };
 
-export const fetchAlbums = createAsyncThunk("artists/fetchAlbums", async (name) => {
-  const apiKey = process.env.REACT_APP_LASTFM_API_KEY;
-  return fetch(
-    `https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=${name}&api_key=${apiKey}&format=json&`
-  ).then((res) => res.json());
-});
+export const fetchAlbums = createAsyncThunk(
+  "artists/fetchAlbums",
+  async (name) => {
+    const apiKey = process.env.REACT_APP_LASTFM_API_KEY;
+    return fetch(
+      `https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=${name}&api_key=${apiKey}&format=json&`
+    ).then((res) => res.json());
+  }
+);
 
 export const albumListSlice = createSlice({
   name: "artists",

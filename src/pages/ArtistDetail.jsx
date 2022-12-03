@@ -1,42 +1,31 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Card from "../components/Card";
-import {fetchAlbums} from "../features/albumsSlice"
+import { fetchAlbums } from "../features/albumsSlice";
+import { fetchTracks } from "../features/tracksSlice";
 
 const ArtistDetail = () => {
   const { name } = useParams();
-  const [tracks, setTracks] = useState([]);
   const dispatch = useDispatch();
 
-  const albums = useSelector((state) => state?.albumList.items?.topalbums?.album)
-  console.log('albums', albums)
+  const albums = useSelector(
+    (state) => state?.albumList?.items?.topalbums?.album
+  );
+  const tracks = useSelector(
+    (state) => state?.tracksList?.items?.toptracks?.track
+  );
 
   useEffect(() => {
-  dispatch(fetchAlbums(name))
-  })
-  
-
-
-
-  const getTracks = async () => {
-    const apiKey = process.env.REACT_APP_LASTFM_API_KEY;
-    try {
-      const { data } = await axios(
-        `https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${name}&api_key=${apiKey}&format=json`
-      );
-      setTracks(data.toptracks.track);
-    } catch (error) {}
-  };
-  useEffect(() => {
-    getTracks();
+    dispatch(fetchAlbums(name));
+    dispatch(fetchTracks(name));
   }, []);
 
   return (
     <div className="bg-gradient-to-b h-full overflow-hidden from-yellow-500 via-purple-500 to-blue-500 dark:from-dark-700 dark:to-gray-900">
       <div className="flex border-4 sm:w-1/3 w-2/3 mx-auto my-5">
-        <img className="flex w-1/4" src={tracks[0]?.image[2]["#text"]} alt="" />
+        <img className="flex w-1/4" src={tracks[0]?.image[3]["#text"]} alt="" />
         <div className="flex flex-col justify-center w-full items-center py-3 px-1">
           <h1 className="text-base font-semibold uppercase sm:text-2xl">
             {name}
