@@ -35,13 +35,13 @@ const ArtistDetail = () => {
 
   return (
     <div className="overflow-hidden bg-gradient-to-b from-yellow-500 via-purple-500 to-blue-500 dark:from-dark-700 dark:to-gray-900">
-      <div className="flex col-start-2 gap-4 col-span-4 md:w-1/2 sm:w-1/3 my-4 mx-auto bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-gray-900 via-gray-100 to-gray-900 rounded-md">
+      <div className="flex col-start-2 gap-4 col-span-4 md:w-1/2 my-4 mx-auto bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-gray-900 via-gray-100 to-gray-900 rounded-md">
         <img
-          className="flex w-1/6 rounded-md my-4 "
+          className="flex rounded-md "
           src={tracks[0]?.image[2]["#text"]}
           alt=""
         />
-        <h1 className="mb-2 mt-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-dark">
+        <h1 className="md:mt-10 sm:mt-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           {name}
         </h1>
       </div>
