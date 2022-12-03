@@ -8,8 +8,8 @@ const TopCards = ({item, name}) => {
         <div>
           <h5>{item?.name}</h5>
           <p>{name}</p>
-          <p>{item?.playcount}</p>
-          <p>{item?.listeners}</p>
+          <p>{item?.playcount} Play</p>
+          {item?.listeners && <p>{item?.listeners} Listeners</p>}
         </div>
       </a>
     </div>
