@@ -1,24 +1,25 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Card from "../components/Card";
+import {fetchAlbums} from "../features/albumsSlice"
 
 const ArtistDetail = () => {
-  const [albums, setAlbums] = useState([]);
-  const [tracks, setTracks] = useState([]);
   const { name } = useParams();
-  console.log("albums", albums);
-  console.log("tracks", tracks);
+  const [tracks, setTracks] = useState([]);
+  const dispatch = useDispatch();
 
-  const getAlbums = async () => {
-    const apiKey = process.env.REACT_APP_LASTFM_API_KEY;
-    try {
-      const { data } = await axios(
-        `https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=${name}&api_key=${apiKey}&format=json&`
-      );
-      setAlbums(data.topalbums.album);
-    } catch (error) {}
-  };
+  const albums = useSelector((state) => state?.albumList.items?.topalbums?.album)
+  console.log('albums', albums)
+
+  useEffect(() => {
+  dispatch(fetchAlbums(name))
+  })
+  
+
+
+
   const getTracks = async () => {
     const apiKey = process.env.REACT_APP_LASTFM_API_KEY;
     try {
@@ -29,7 +30,6 @@ const ArtistDetail = () => {
     } catch (error) {}
   };
   useEffect(() => {
-    getAlbums();
     getTracks();
   }, []);
 
