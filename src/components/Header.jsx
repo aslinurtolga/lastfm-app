@@ -11,17 +11,22 @@ const Header = () => {
         </Link>
       </div>
       <div>
-        <a href="https://www.linkedin.com/in/aslinurtolga/" target="_blank">
+        <a
+          href="https://www.linkedin.com/in/aslinurtolga/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <ImLinkedin
             size={37}
             className="absolute top-2 right-14 rounded-md"
           />
         </a>
-        <a href="https://github.com/aslinurtolga/lastfm-app" target="_blank">
-          <ImGithub
-            size={37}
-            className="absolute top-2 right-24"
-          />
+        <a
+          href="https://github.com/aslinurtolga/lastfm-app"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <ImGithub size={37} className="absolute top-2 right-24" />
         </a>
         <Switch />
       </div>
