@@ -45,13 +45,17 @@ const ArtistDetail = () => {
           {name}
         </h1>
       </div>
-      <div className="flex flex-col md:justify-between md:flex-col h-full rounded-md ">
-        {albums.map((item, index) => {
-          return <TopCards key={index} item={item} name={name} />;
-        })}
-        {tracks.map((item, index) => {
-          return <TopCards key={index} item={item} name={name} />;
-        })}
+      <div className="flex">
+        <div className="flex flex-col md:justify-between md:flex-col h-full rounded-md ">
+          {albums.map((item, index) => {
+            return <TopCards key={index} item={item} name={name} />;
+          })}
+        </div>
+        <div className="flex flex-col md:justify-between md:flex-col h-full rounded-md ">
+          {tracks.map((item, index) => {
+            return <TopCards key={index} item={item} name={name} />;
+          })}
+        </div>
       </div>
     </div>
   );
