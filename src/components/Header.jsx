@@ -2,9 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ImLinkedin, ImGithub } from "react-icons/im";
 import Switch from "./Switch";
-
-const githubLink = "https://github.com/aslinurtolga";
-const linkedinLink = "https://www.linkedin.com/in/aslinurtolga/";
 const Header = () => {
   return (
     <nav className="w-full flex flex-wrap items-center justify-between py-3 bg-slate-200 dark:bg-slate-70 dark:text-gray-900  shadow-lg navbar navbar-expand-lg fixed-top">
@@ -14,16 +11,18 @@ const Header = () => {
         </Link>
       </div>
       <div>
-        <ImLinkedin
-          href={linkedinLink}
-          size={37}
-          className="absolute top-2 right-14 rounded-md"
-        />
-        <ImGithub
-          href={githubLink}
-          size={37}
-          className="absolute top-2 right-24"
-        />
+        <a href="https://www.linkedin.com/in/aslinurtolga/" target="_blank">
+          <ImLinkedin
+            size={37}
+            className="absolute top-2 right-14 rounded-md"
+          />
+        </a>
+        <a href="https://github.com/aslinurtolga/lastfm-app" target="_blank">
+          <ImGithub
+            size={37}
+            className="absolute top-2 right-24"
+          />
+        </a>
         <Switch />
       </div>
     </nav>
