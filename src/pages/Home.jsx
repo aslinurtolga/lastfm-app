@@ -25,7 +25,7 @@ const Home = () => {
         <h2>Top Artist List</h2>
         <div>
             {artistList.map((item, index) => (
-                <TopArtistList/>
+                <TopArtistList key={index} artistList={item}/>
                 ))}
         </div>
     </div>
