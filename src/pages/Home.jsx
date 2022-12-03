@@ -19,6 +19,17 @@ const Home = () => {
     useEffect(() => {
       getArtistList();
     }, [])
+    
+  return (
+    <div>
+        <h2>Top Artist List</h2>
+        <div>
+            {artistList.map((item, index) => (
+                <TopArtistList/>
+                ))}
+        </div>
+    </div>
+  )
 }
 
 export default Home
