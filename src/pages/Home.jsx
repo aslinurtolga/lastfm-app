@@ -1,23 +1,15 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from "react";
 import TopArtistList from "../components/TopArtistList";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchArtistsList } from "../features/albumListSlice";
 
 const Home = () => {
-  const [artistList, setArtistList] = useState([]);
+  const dispatch = useDispatch();
+  const { artists } = useSelector((state) => state?.artistList?.items);
 
-  const getArtistList = async () => {
-    const apiKey = process.env.REACT_APP_LASTFM_API_KEY;
-    try {
-      const {
-        data: { artists },
-      } = await axios(
-        `https://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=${apiKey}&format=json`
-      );
-      setArtistList(artists.artist);
-    } catch (error) {}
-  };
   useEffect(() => {
-    getArtistList();
+    dispatch(fetchArtistsList());
   }, []);
 
   return (
@@ -25,8 +17,9 @@ const Home = () => {
       <h2 className=" flex justify-center py-6 dark:text-white">
         Top Artist List
       </h2>
+
       <div className=" h-3/4 overflow-auto aslinur w-2/3 mx-auto grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {artistList.map((item, index) => (
+        {artists?.artist.map((item, index) => (
           <TopArtistList key={index} artistList={item} />
         ))}
       </div>
