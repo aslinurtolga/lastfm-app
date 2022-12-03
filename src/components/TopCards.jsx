@@ -6,10 +6,10 @@ const TopCards = ({item, name}) => {
       <a href={item?.url}>
         <img src={item.image[3]["#text"]} alt="" />
         <div>
-          <h5></h5>
-          <p></p>
-          <p></p>
-          <p></p>
+          <h5>{item?.name}</h5>
+          <p>{name}</p>
+          <p>{item?.playcount}</p>
+          <p>{item?.listeners}</p>
         </div>
       </a>
     </div>
