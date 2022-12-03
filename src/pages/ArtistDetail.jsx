@@ -34,8 +34,8 @@ const ArtistDetail = () => {
   }, []);
 
   return (
-    <div className="bg-orange-500">
-      <div className="flex col-start-2 gap-4 col-span-4 md:w-1/2 sm:w-1/3 my-4 mx-auto bg-orange-900 rounded-md">
+    <div className="overflow-hidden bg-gradient-to-b from-yellow-500 via-purple-500 to-blue-500 dark:from-dark-700 dark:to-gray-900">
+      <div className="flex col-start-2 gap-4 col-span-4 md:w-1/2 sm:w-1/3 my-4 mx-auto bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-gray-900 via-gray-100 to-gray-900 rounded-md">
         <img
           className="flex w-1/6 rounded-md my-4 "
           src={tracks[0]?.image[2]["#text"]}
@@ -45,13 +45,13 @@ const ArtistDetail = () => {
           {name}
         </h1>
       </div>
-      <div className="flex">
-        <div className="flex flex-col md:justify-between md:flex-col h-full rounded-md ">
+      <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col items-center">
           {albums.map((item, index) => {
             return <TopCards key={index} item={item} name={name} />;
           })}
         </div>
-        <div className="flex flex-col md:justify-between md:flex-col h-full rounded-md ">
+        <div className="flex flex-col items-center">
           {tracks.map((item, index) => {
             return <TopCards key={index} item={item} name={name} />;
           })}
