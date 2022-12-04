@@ -1,6 +1,9 @@
+## Check The Live Website ➡️ [Live Website](https://aslinurtolga-lastfm.netlify.app/)
+
 ## LAST.FM 
 
 #### It is an application that you can access the 'Top Artists' and their 'Top Albums' and 'Top Tracks' with the detail. I used the same component for Albums and Tracks card component. The information is taken from the Last.fm API.
+
 
 ```bash
 🎼 User can see the list of top artists at the main page.
@@ -25,9 +28,9 @@ Design a weather condition page following the design and populate data for searc
 ```bash
 - React
 - React Router Dom
-- React Query
-- React Testing Library
-- Chakra-UI
+- Redux Toolkit
+- Cypress Testing
+- Tailwindcss
 - Storybook
 - [Last.fm API](https://www.last.fm/tr/api)
 ```
