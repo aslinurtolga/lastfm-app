@@ -11,16 +11,16 @@ const Card = ({ item, name }) => {
       onClick={handleClick}
     >
       <img
-        className="w-1/3 rounded-md"
+        className=" image w-1/3 rounded-md"
         src={item?.image[3]["#text"]}
         alt="imageArtist"
       />
       <div className="flex flex-col justify-center items-center w-full text-center">
-        <h5 className="text-sm md:text-base font-bold py-2 uppercase truncate w-32 ">
+        <h5 className=" name text-sm md:text-base font-bold py-2 uppercase truncate w-32 ">
           {item?.name}
         </h5>
-        <p className="text-xs md:text-sm italic py-2">{name}</p>
-        <p className="text-xs md:text-sm italic py-2">{item?.playcount} Play</p>
+        <p className=" text-xs md:text-sm italic py-2">{name}</p>
+        <p className="playcount text-xs md:text-sm italic py-2">{item?.playcount} Play</p>
         {item?.listeners && (
           <p className="text-xs md:text-sm italic py-2">
             {item?.listeners} Listener

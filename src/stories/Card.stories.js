@@ -43,3 +43,8 @@ TaylorSwift.args = {
   name: "Taylor Swift",
 };
 
+export const AslinurTolga = Template.bind({});
+AslinurTolga.args = {
+  item: SampleItem,
+  name: "Aslinur Tolga",
+};
