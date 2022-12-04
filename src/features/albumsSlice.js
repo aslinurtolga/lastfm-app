@@ -17,7 +17,7 @@ export const fetchAlbums = createAsyncThunk(
   }
 );
 
-export const albumListSlice = createSlice({
+export const albumSlice = createSlice({
   name: "artists",
   initialState,
   reducers: {},
@@ -38,4 +38,4 @@ export const albumListSlice = createSlice({
   },
 });
 
-export default albumListSlice.reducer;
+export default albumSlice.reducer;

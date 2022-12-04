@@ -18,7 +18,7 @@ const Header = () => {
         >
           <ImLinkedin
             size={37}
-            className="absolute top-2 right-14 rounded-md"
+            className="absolute top-2 right-14 rounded-md hover:text-white  hover:bg-dark "
           />
         </a>
         <a
@@ -26,7 +26,10 @@ const Header = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <ImGithub size={37} className="absolute top-2 right-24" />
+          <ImGithub
+            size={37}
+            className="absolute top-2 right-24  hover:text-white hover:bg-dark rounded-full "
+          />
         </a>
         <Switch />
       </div>

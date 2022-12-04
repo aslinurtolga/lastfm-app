@@ -8,7 +8,7 @@ const initialState = {
 };
 
 export const fetchArtistsList = createAsyncThunk(
-  "artists/fetchArtistList",
+  "artists/fetchArtistsList",
   async () => {
     const apiKey = process.env.REACT_APP_LASTFM_API_KEY;
     return fetch(

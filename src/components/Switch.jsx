@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Switch = () => {
-  const [lightMode, setLightMode] = useState(true);
+  const [lightMode, setLightMode] = useState(false);
 
   if (lightMode) {
     document.documentElement.classList.add("dark");
@@ -15,7 +15,7 @@ const Switch = () => {
         type="button"
         title="Toggle light/dark mode"
         onClick={() => setLightMode(!lightMode)}
-        className="absolute items-center top-2 p-2.5 mr-3 text-xs font-medium light-700 bg-gray-900 rounded-md border border-gray-200 toggle-dark-state-example hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-500 dark:bg-gray-900 focus:outline-none text-white dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+        className="absolute items-center top-2 p-2.5 mr-3 text-xs font-medium light-700 bg-dark rounded-md border border-gray-200 toggle-dark-state-example hover:bg-gray-100 hover:text-dark-700 focus:z-10 focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-500 dark:bg-gray-900 focus:outline-none text-white dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
       >
         {lightMode ? (
           <svg

@@ -14,7 +14,7 @@ const Home = () => {
 
   return (
     <div className=" overflow-hidden bg-gradient-to-b from-yellow-500 via-purple-500 to-blue-500 dark:from-dark-700 dark:to-gray-900">
-      <h2 className=" flex justify-center py-6 dark:text-white">
+      <h2 className=" flex justify-center py-6 dark:text-white text-base font-semibold uppercase sm:text-2xl border-4 sm:w-1/3 w-2/3 mx-auto my-5 rounded-md">
         Top Artist List
       </h2>
 
