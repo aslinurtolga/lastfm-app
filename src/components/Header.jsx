@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ImLinkedin, ImGithub } from "react-icons/im";
 import Switch from "./Switch";
+
 const Header = () => {
   return (
     <nav className="w-full flex flex-wrap items-center justify-between py-3 bg-slate-200 dark:bg-slate-70 dark:text-gray-900  shadow-lg navbar navbar-expand-lg fixed-top ">

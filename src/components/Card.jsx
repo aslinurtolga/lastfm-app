@@ -1,12 +1,18 @@
 import React from "react";
 
 const Card = ({ item, name }) => {
+  const handleClick = () => {
+    window.location.href = item.url;
+  };
   console.log(item);
   return (
-    <div className="flex border border-white rounded-md h-40  ">
+    <div
+      className="flex border border-white rounded-md h-40 cursor-pointer"
+      onClick={handleClick}
+    >
       <img
         className="w-1/3 rounded-md"
-        src={item.image[3]["#text"]}
+        src={item?.image[3]["#text"]}
         alt="imageArtist"
       />
       <div className="flex flex-col justify-center items-center w-full text-center">
