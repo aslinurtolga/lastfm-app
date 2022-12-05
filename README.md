@@ -19,10 +19,7 @@
 ![image](./lastfm.jpg)
 
 ## Description
-Project aims get information about Last.fm via a React, Redux, Storybook and Cypress Testing.
-
-## Problem Statement
-Design a weather condition page following the design and populate data for searched city with using of axios in JS.
+Project aims get information about Last.fm via a React, Redux, Storybook,Tailwindcss and Cypress Testing.
 
 ## Technologies 💻
 ```bash
